@@ -192,7 +192,7 @@
     padding: 0 50px;
 }
 .main__content h1{
-    font-size: 4rem;
+    font-size: 2rem;
     background-color: #ff8177;
     background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
     background-size: 100%;
@@ -217,10 +217,12 @@
     height: 100px;
 }
 .main__content p{
-    font-size: 2rem;
-    margin-top: 1rem;
+    font-size: 1.7rem;
+    margin-top: 1.1rem;
     font-weight: 700;
-    color: #fff;
+    opacity: 0.6;
+    color: #ababab;
+    text-decoration:none;
 }
 .main__btn {
     font-size: 1rem;
@@ -263,6 +265,7 @@
 #main__img{
     width: 90%;
     height: 90%;
+    border-radius: 1000px;
 }
 /* mobile responsiveness */
 
@@ -508,7 +511,7 @@ social__icon--link {
 }
 .social__icons a{
     color: #fff;
-    font-size:32px;
+    font-size:48px;
 }
 #footer__logo {
     color: #fff;
@@ -562,4 +565,43 @@ social__icon--link {
         margin-bottom: 1rem;
     }
     
+}
+/* project section css */
+.project {
+    background-color: #141414;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.project h1{
+    background-color: #ff8177;
+    background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%,#ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+    background-size: 100%;
+    margin-bottom : 2.5rem;
+    margin-top: 1rem;
+    font-size: 2.5rem;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fil-color: transparent;
+}
+
+.project p{
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    font-weight: 700;
+    opacity: 1;
+    color: #ababab;
+    text-decoration:none;
+    max-width: 1000px;
+}
+
+@media screen and (max-width: 480px){
+    .project h1{
+        font-size: 1rem;
+    }
+    .project p{
+        font-size: 0.75rem;
+    }
 }

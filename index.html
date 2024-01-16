@@ -9,39 +9,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+<script src = "includeHTML.js"></script>
+
 </head>
 <body>
     <!-- Nav bar section -->
-    <nav class="navbar">
-        <div class="navbar__container">
-            <a href="/" id="navbar__logo"><i class="fas fa-terminal"></i>David PC</a>
-            <div class="navbar__toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-            <ul class="navbar__menu">
-                <li class="navbar__item">
-                    <a href="/" class="navbar__links"> Home</a>
-                </li>
-                
-                <li class="navbar__item">
-                    <a href="/projects.html" class="navbar__links">Projects</a>
-                </li>
-                <li class="navbar__item">
-                    <a href="/" class="navbar__links">Resume</a>
-                </li>
-                <li class="navbar__btn">
-                    <a href="/" class="button">Contact me</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <div class="navbar__import">
+        <div hf-include-html="header.html"></div>
+    </div>
 
     <!-- Hero section -->
     <div class="main">
         <div class="main__container">
             <div class="main__content">
+                <h1>Hi, I'm</h1>
                 <h2> David Pavlove Cunsolo</h2>
                 <!-- <h2>header 2</h2> -->
                 <p>University of Guelph Software Engineering</p>
@@ -70,57 +51,13 @@
         </div>
     </div>
 <!-- footer section -->
+<div hf-include-html="footer.html"></div>
+<!-- <?php $IPATH = $_SERVER["DOCUMENT_ROOT"]."/php/"; include($IPATH."headernav.html") ?> -->
+<script>
+includeHTML();
+</script>
 
-    <div class="footer__container">
-        <div class="footer__links">
-            <div class="footer__link--wrapper">
-                <div class="footer__link--items">
-                   <a href="/">Resources</a>
-                    <a href="/">
-                    </a>
-                </div>
-                <div class="footer__link--items">
-                    <a href="/">Contact Me</a>
-                    <!-- <a href="/">Projects</a>
-                    <a href="/">Resume</a>
-                    <a href="/">Link 3</a>
-                    <a href="/">Link 4</a> -->
-                </div>
-                    <div class="footer__link--items">
-                        <a href="/">About Me</a>
-                        <!-- <a href="/">Link 1</a>
-                        <a href="/">Link 2</a>
-                        <a href="/">Link 3</a>
-                        <a href="/">Link 4</a>
-                        <a href="/">Link 5</a> -->
-                    </div>
-            </div>
-        </div>
-        <div class="social__media">
-            <div class="social__media--wrap">
-                <div class="footer__logo">
-                    <a href="/" id="footer__logo"><i class="fas fa-terminal"></i>David PC</a>
-                </div>
-                <p class="website__rights">© David Pavlove Cunsolo 2024. All rights Reserved</p>
-                <div class="social__icons">
-                    <a href="/" class="social__icon--link" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="/" class="social__icon--link" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="/" class="social__icon--link" target="_blank"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
+<script src="script.js"></script>
 
-    <script scr="app.js">
-
-const menu = document.querySelector("#mobile-menu");
-const menuLinks = document.querySelector(".navbar__menu");
-
-menu.addEventListener("click", function () {
-  menu.classList.toggle("is-active");
-  menuLinks.classList.toggle("active");
-});
-
-    </script>
 </body>
 </html>
