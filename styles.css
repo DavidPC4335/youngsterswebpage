@@ -288,7 +288,7 @@
         margin-top: 2rem;
     }
     .main__content h2{
-        font-size: 3rem;
+        font-size: 3rem;    
         margin-top: 2rem;
     }
     .main__content p{
@@ -397,7 +397,8 @@ cursor: pointer;
 
 @media screen and (max-width: 960px){
     .services{
-        height: 1600px;
+        height: 1300px;
+        padding-top: 300px;
     }
 
     .service h1{
@@ -409,7 +410,8 @@ cursor: pointer;
 
 @media screen and (max-width: 480px){
     .services{
-        height: 1300px;
+        height: 1000px;
+        padding-top: 150px;
     }
 
     .services h1{
@@ -578,8 +580,8 @@ social__icon--link {
     background-color: #ff8177;
     background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%,#ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
     background-size: 100%;
-    margin-bottom : 2.5rem;
-    margin-top: 1rem;
+    margin-bottom : 0.75rem;
+    margin-top: 1.5rem;
     font-size: 2.5rem;
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -597,7 +599,30 @@ social__icon--link {
     max-width: 1000px;
 }
 
+.project iframe{
+    margin-top: 1rem;
+    width: 960px;
+    height: 540px;
+    border:#ababab;
+    border-radius: 10px;
+    border-width: 10px;
+background-color: #141414;
+
+}
+@media screen and (max-width: 960px){
+    .project iframe{
+        width: 480px;
+        height:  270px;
+    }
+    /* width: 100%;
+    height:  56.25%;; */
+    
+}
 @media screen and (max-width: 480px){
+    .project iframe{
+        width: 100%;
+        height:  100%;
+    }
     .project h1{
         font-size: 1rem;
     }
