@@ -25,6 +25,7 @@ function includeHTML() {
       xhttp.open("GET", file, true);
       xhttp.send();
       /* Exit the function: */
+
       const menu = document.querySelector("#mobile-menu");
       const menuLinks = document.querySelector(".navbar__menu");
 
@@ -32,6 +33,7 @@ function includeHTML() {
         menu.classList.toggle("is-active");
         menuLinks.classList.toggle("active");
       });
+
       return;
     }
   }

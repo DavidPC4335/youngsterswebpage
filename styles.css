@@ -105,7 +105,7 @@
         width: 100%;
         position: absolute;
         margin: 0;
-        top:-1000;
+        top:-1000px;
         opacity: 0;
         transition: all 0.5s ease;
         height: 50vh;
@@ -506,6 +506,22 @@ social__icon--link {
     justify-content: space-between;
     align-items: center;
     width: 240px;
+    background-color: #141414;
+}
+.social__icons--contactme{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #141414;
+}
+.social__icons--contactme a{
+color: #adadad;
+font-size: 5rem;
+padding: 0 2rem;
 }
 .social__icons a:hover{
     color: #f77062;
@@ -513,7 +529,7 @@ social__icon--link {
 }
 .social__icons a{
     color: #fff;
-    font-size:48px;
+    font-size:56px;
 }
 #footer__logo {
     color: #fff;
@@ -566,7 +582,9 @@ social__icon--link {
     .website__rights{
         margin-bottom: 1rem;
     }
-    
+    .social__icons--contactme a{
+        font-size: 1rem;
+    }
 }
 /* project section css */
 .project__header{
@@ -587,6 +605,16 @@ social__icon--link {
     text-align: center;
     text-decoration: underline;
 }
+.project__header .social__icon--link{
+    color: #fff;
+    font-size: 56px;
+    /* padding: 3rem 0 0 0; */
+
+}
+.project__header .social__icon--link:hover{
+    color: #ff0844;
+    transition: 0.3s ease-out;
+}
 .project__header p{
     font-size: 1.5rem;
     margin-top: 2rem;
@@ -603,7 +631,7 @@ social__icon--link {
     opacity: 1;
     text-align: center;
     color: #FFF;
-    text-decoration:uinderline;
+    text-decoration:underline;
 
 }
 .project__header a:hover{
@@ -650,7 +678,6 @@ social__icon--link {
     height: 540px;
     border-radius: 10px;
     margin: 2rem;
-
 }
 .img__wrapper img{
     width: 370px;
@@ -682,6 +709,10 @@ background-color: #141414;
         width: 250px;
         height: 300px;
     }
+    .img__wrapper--wide img{
+        width: 480px;
+        height: 270px;
+    }
     .project__header p{
         font-size: 1.2rem;
     }
@@ -697,6 +728,11 @@ background-color: #141414;
     .project img{
         width: 180px;
         height: 200px;
+    }
+    .img__wrapper--wide img{
+        width: 100%;
+        height: 100%;
+        margin: 0;
     }
     .project h1{
         font-size: 1rem;
@@ -716,4 +752,77 @@ background-color: #141414;
     .project__header a{
         font-size: 0.75rem;
     }
+}
+
+/* contact me section */
+.contact__form{
+    display: flex;
+   width: 100%;
+   height: 90vh;
+   align-items: center;
+   justify-content: center;
+   background: #141414;
+   box-sizing: border-box;
+   color: #adadad;
+   padding-top: 5%;
+}
+form{
+    background-color: #3d3d3d;
+    width: 500px;
+    padding: 20px 30px;
+    font-size:18px;
+    border-radius: 15px;
+}
+.message__icon{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.message__icon i{
+    font-size: 40px;
+}
+.message__icon span{
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: 15px;
+}
+form input, textarea{
+    width: 100%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #000;
+    outline: none;
+    background: transparent;
+    color: #fff;
+}
+#input__field{
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+#input__field i{
+    font-size: 22px;
+    margin-right: 15px;
+}
+.send__btn{
+    width: 120px;
+    border: none;
+    background-color: #f77062;
+    font-size: 16px;
+    padding: 6px 0;
+    border-radius: 5px;
+    color: #fff;
+}
+.send__btn:hover{
+    background-color: #4837ff;
+    transition: 0.3s ease-out;
+}
+.formspree{
+    padding-top: 2px;
+    font-size: 10px;
+}
+.formspree a{
+    color: #adadad;
+    text-decoration: underline;
 }
