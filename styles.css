@@ -569,6 +569,47 @@ social__icon--link {
     
 }
 /* project section css */
+.project__header{
+    background-color: #141414;
+    align-items: center;
+    height:30vh;
+    align-content: center;
+}
+.project__header h1{
+    font-size: 5rem;
+    background-color: #ff8177;
+    background-image: linear-gradient(to top, #b721ff 0%, #21d4fd 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fil-color: transparent;
+    text-align: center;
+    text-decoration: underline;
+}
+.project__header p{
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    font-weight: 700;
+    opacity: 1;
+    text-align: center;
+    color: #ababab;
+    text-decoration:none;
+}
+.project__header a{
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    font-weight: 700;
+    opacity: 1;
+    text-align: center;
+    color: #FFF;
+    text-decoration:uinderline;
+
+}
+.project__header a:hover{
+    color: #ff0844;
+    transition: 0.3s ease-out;
+}
 .project {
     background-color: #141414;
     display: flex;
@@ -598,7 +639,25 @@ social__icon--link {
     text-decoration:none;
     max-width: 1000px;
 }
+.img__wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+.img__wrapper--wide img{
+    width: 960px;
+    height: 540px;
+    border-radius: 10px;
+    margin: 2rem;
 
+}
+.img__wrapper img{
+    width: 370px;
+    height: 400px;
+    border-radius: 10px;
+    margin: 0 2.5rem;
+}
 .project iframe{
     margin-top: 1rem;
     width: 960px;
@@ -616,17 +675,45 @@ background-color: #141414;
     }
     /* width: 100%;
     height:  56.25%;; */
-    
+    .project__header h1{
+        font-size: 4rem;
+    }
+    .project img{
+        width: 250px;
+        height: 300px;
+    }
+    .project__header p{
+        font-size: 1.2rem;
+    }
+    .project__header a{
+        font-size: 1.2rem;
+    }
 }
 @media screen and (max-width: 480px){
     .project iframe{
         width: 100%;
         height:  100%;
     }
+    .project img{
+        width: 180px;
+        height: 200px;
+    }
     .project h1{
         font-size: 1rem;
     }
     .project p{
+        font-size: 0.75rem;
+    }
+    .project__header{
+        height: 10vh;
+    }
+    .project__header h1{
+        font-size: 1.5rem;
+    }
+    .project__header p{
+        font-size: 0.75rem;
+    }
+    .project__header a{
         font-size: 0.75rem;
     }
 }
