@@ -605,6 +605,7 @@ padding: 0 2rem;
     text-align: center;
     text-decoration: underline;
 }
+
 .project__header .social__icon--link{
     color: #fff;
     font-size: 56px;
@@ -755,6 +756,8 @@ background-color: #141414;
 }
 
 /* contact me section */
+
+
 .contact__form{
     display: flex;
    width: 100%;
@@ -764,13 +767,13 @@ background-color: #141414;
    background: #141414;
    box-sizing: border-box;
    color: #adadad;
-   padding-top: 5%;
+   padding-top: 0%;
 }
 form{
     background-color: #3d3d3d;
-    width: 500px;
+    width: 800px;
     padding: 20px 30px;
-    font-size:18px;
+    font-size:25px;
     border-radius: 15px;
 }
 .message__icon{
@@ -782,9 +785,14 @@ form{
     font-size: 40px;
 }
 .message__icon span{
-    font-size: 22px;
-    font-weight: bold;
+    font-size: 30px;
+    font-weight: bolder;
     margin-left: 15px;
+    background-image: linear-gradient(to right, #6c6a6a, #e7e7e783);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fil-color: transparent;
 }
 form input, textarea{
     width: 100%;
@@ -825,4 +833,69 @@ form input, textarea{
 .formspree a{
     color: #adadad;
     text-decoration: underline;
+}
+
+.contact__header{
+    font-size: 2rem;
+    background-color: #141414;
+}
+.contact__header h1{
+    font-size: 2rem;
+    background-image: linear-gradient(to top, #ff8177 0%, #ff0844 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fil-color: transparent;
+    text-align: center;
+    text-decoration: underline;
+}
+@media screen and (max-width: 960px){
+    .contact__form{
+        display: flex;
+       width: 100%;
+       height: 90vh;
+    }
+    form{
+        width: 500px;
+        padding: 20px 30px;
+        font-size:18px;
+    }
+}
+
+/* Resume styling */
+
+.resume__container{
+    background-color: #141414;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0;
+    box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16);
+   
+}
+.resume{
+    margin-top: 1.6rem; 
+    background-color: #141414;
+    /* position: absolute;  */
+    align-self: center;
+    width: 960px;
+    height:1220px; 
+    top: 0; left: center; 
+    border: none; 
+    padding: 0;
+}
+@media screen and (max-width: 960px){
+    .resume{
+        width: 480px;
+        height: 624px;
+    }
+    
+}
+@media screen and (max-width: 480px){
+    .resume{
+        width: 300px;
+        height: 390px;
+    }
+    
 }
