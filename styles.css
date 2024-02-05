@@ -4,6 +4,14 @@
     padding : 0;
     font-family : 'Kumbuh Sans',sans-serif;
 }
+/* fullscreen iframe settings */
+iframe.fullScreen {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 .navbar {
     background-color: #131313;
     height: 80px;
@@ -277,7 +285,6 @@
         justify-self: center;
         width: 100%;
         margin :0 auto;
-        height: 90vh;
     }
     .main__content{
         text-align: center;
@@ -322,7 +329,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height : 100vh;
+    height : auto;
 }
 .services h1{
     background-color: #ff8177;
@@ -339,6 +346,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    height: 100%;
 }
 
 .services__card{
@@ -346,13 +354,16 @@
     height: 420px;
     width: 650px;
     border-radius: 4px;
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17,17,17,0.6) 100%), url("/images/logos_horizontal.png");
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17,17,17,0.6) 100%), url("/images/gyb.png");
     background-size: cover;
     position: relative;
     color: #fff;
 }
 .services__card:nth-child(2){
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17,17,17,0.6) 100%), url("/images/gyb.png");
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17,17,17,0.6) 100%), url("/images/terrarium.png");
+}
+.services__card:nth-child(3){
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17,17,17,0.6) 100%), url("/images/logos_horizontal.png");
 }
 .services h2{
     position: absolute;
@@ -388,17 +399,11 @@ transition: 0.2s ease-in;
 cursor: pointer;
 }
 /* mobile responsiveness */
-@media screen and (max-width: 1378px){
-    .services{
-        height: 1000px;
-    }
-}
 
 
 @media screen and (max-width: 960px){
     .services{
-        height: 1300px;
-        padding-top: 300px;
+        padding-top: 20%;
     }
 
     .service h1{
@@ -410,7 +415,6 @@ cursor: pointer;
 
 @media screen and (max-width: 480px){
     .services{
-        height: 1000px;
         padding-top: 150px;
     }
 
@@ -877,12 +881,21 @@ form input, textarea{
 
 .resume__container{
     background-color: #141414;
-    display: flex;
     justify-content: center;
     align-items: center;
     padding-bottom: 0;
+    flex: 1;
     box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16);
+    max-width: 500px;
+    width: 100%;
    
+}
+.resume__wrapper{
+background-color: #141414;
+display: flex;
+flex-direction: column;
+align-items: center;
+height : auto;
 }
 .resume{
     margin-top: 1.6rem; 
