@@ -686,6 +686,18 @@ padding: 0 2rem;
     text-decoration:none;
     max-width: 1000px;
 }
+.project p a{
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    font-weight: 700;
+    opacity: 1;
+    color: #d9d9d9;
+    text-decoration:underline;
+}
+.project p a:hover{
+    color: #ff0844;
+    transition: 0.3s ease-out;
+}
 .img__wrapper{
     display: flex;
     justify-content: space-between;
@@ -769,6 +781,9 @@ background-color: #141414;
         font-size: 0.75rem;
     }
     .project__header a{
+        font-size: 0.75rem;
+    }
+    .project p a{
         font-size: 0.75rem;
     }
     .img__wrapper img{
@@ -923,17 +938,48 @@ padding-top: 2rem; ;
     border: none; 
     padding: 0;
 }
-@media screen and (max-width: 960px){
-    .resume{
-        width: 480px;
-        height: 624px;
-    }
-    
+
+
+/* about me page */
+.about__header--wrapper{
+display: flex;
+flex-direction: row; 
 }
-@media screen and (max-width: 480px){
-    .resume{
-        width: 300px;
-        height: 390px;
+.aboutme__headshot{
+    width: 300px;
+    height: 300px;
+    border-radius: 1000px;
+    margin: 0 2.5rem;
+}
+.awslogo__wrapper{
+    max-width: 1300px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.awslogo__wrapper img{
+    width: 800px;
+    margin: 0 2rem;
+    height: 250px;
+}
+
+
+@media screen and (max-width: 960px){
+    .awslogo__wrapper{
+        flex-direction: column;
     }
-    
+    .awslogo__wrapper img{
+        margin: 1rem 0;
+        width: 600px;
+        height: 220px;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .awslogo__wrapper img{
+        width: 300px;
+        height: 100px;
+    }
 }
