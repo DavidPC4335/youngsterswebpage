@@ -18,7 +18,15 @@
         <div hf-include-html="header.html"></div>
     </div>
 
-    
+    <!-- <iframe id="background" src="animation.html"></iframe> -->
+    <canvas id="c"></canvas>
+    <script  type="importmap">{
+        "imports": {
+            "three": "https://threejs.org/build/three.module.js",
+            "three/addons/": "https://threejs.org/examples/jsm/"
+        }
+    }</script>
+    <script type="module" src="animation.js"></script>
     <!-- Hero section -->
     <div class="main">
         <div class="main__container">
@@ -70,7 +78,7 @@
 <script>
 includeHTML();
 </script>
-<script src="script.js"></script>
+<script src="script.js">run()</script>
 
 
 </body>
