@@ -38,6 +38,8 @@ const torus = new THREE.Mesh(geometry, material);
 
 //scene.add(torus);
 
+const spaceTexture = new THREE.TextureLoader().load("images/space.png");
+scene.background = spaceTexture;
 // Lights
 
 const pointLight = new THREE.PointLight(0xffffff);
@@ -96,7 +98,7 @@ for (var i = 0; i < 200; i++) {
   stars[i] = addStar();
   starv[i] = new THREE.Vector2(rand(-0.1, 0.1), rand(-0.1, 0.1));
 }
-console.log(stars);
+// console.log(stars);
 // Background
 
 // Scroll Animation
@@ -108,7 +110,8 @@ function moveCamera() {
   // camera.rotation.y = t * -0.002;
   camera.rotateX(t * -0.0002);
   if (laptop != null) {
-    laptop.position.z = t / 10 + -0.001;
+    laptop.position.z = t / 10 + 10;
+    // console.log(laptop.position.z);
     laptop.position.x = t * -0.002;
     laptop.rotation.y = t * -0.002;
   }
@@ -147,11 +150,9 @@ function animate() {
     } else if (stars[i].rotation.y < 0) {
       stars[i].rotation.y = 2 * Math.PI;
     }
-  }
-  scene// controls.update();
+  } // controls.update();
 
-  .renderer
-    .render(scene, camera);
+  renderer.render(scene, camera);
 }
 
 animate();
