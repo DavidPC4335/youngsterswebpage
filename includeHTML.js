@@ -40,9 +40,4 @@ function initPage() {
     menu.classList.toggle("is-active");
     menuLinks.classList.toggle("active");
   });
-
-  document.getElementById("#background").onload = function () {
-    this.contentWindow.scrollTo(0, 400);
-  };
-  console.log("initPage");
 }
