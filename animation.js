@@ -65,11 +65,55 @@ mtlLoader.load(
         laptop = root;
         laptop.position.set(0, 0, 10);
         laptop.rotation.set(0, -2 * Math.PI, 0);
+        root.clone();
       }
     );
   }
 );
+//Cubes
+const loader = new THREE.TextureLoader();
+function loadColorTexture(path) {
+  const texture = loader.load(path);
+  texture.colorSpace = THREE.SRGBColorSpace;
+  return texture;
+}
+const materials = [
+  new THREE.MeshBasicMaterial({
+    map: loadColorTexture("images/icons/C_logo.png"),
+  }),
+  new THREE.MeshBasicMaterial({
+    map: loadColorTexture("images/icons/gameMaker.png"),
+  }),
+  new THREE.MeshBasicMaterial({
+    map: loadColorTexture("images/icons/java.png"),
+  }),
+  new THREE.MeshBasicMaterial({
+    map: loadColorTexture("images/icons/js_logo.png"),
+  }),
+  new THREE.MeshBasicMaterial({
+    map: loadColorTexture("images/icons/python.png"),
+  }),
+  new THREE.MeshBasicMaterial({
+    map: loadColorTexture("images/icons/react.png"),
+  }),
+];
+const cube = new THREE.Mesh(geometry, material);
+function makeInstance(color, x, y, z) {
+  const material = new THREE.MeshPhongMaterial({ color });
+  const geometry = new THREE.BoxGeometry(10, 10, 10);
+  const cube = new THREE.Mesh(geometry, materials);
+  scene.add(cube);
 
+  cube.position.set(x, y, z);
+  return cube;
+}
+const cubey = -1.5,
+  cubez = 1;
+const cubes = [
+  // makeInstance(0x44aa88, 0, cubey, cubez),
+  makeInstance(0x8844aa, -25, cubey, cubez),
+  makeInstance(0xaa8844, 25, cubey, cubez),
+];
 // Helpers
 
 // const lightHelper = new THREE.PointLightHelper(Light);
@@ -118,11 +162,9 @@ function moveCamera() {
     laptop.position.x = t * -0.002;
     laptop.rotation.y = t * -0.002;
   }
-  for (var i = 0; i < 200; i++) {
-    stars[i].position.z += 0.01;
-    stars[i].position.x += 0.01;
-    stars[i].rotation.y += 0.01;
-  }
+  cubes[0].position.x = t * -0.03 - 65;
+  cubes[1].position.x = t * 0.03 + 70;
+  console.log(cubes[0].position.x);
 }
 
 document.body.onscroll = moveCamera;
@@ -136,8 +178,10 @@ function animate() {
   // torus.rotation.x += 0.01;
   // torus.rotation.y += 0.005;
   // torus.rotation.z += 0.01;
-  if (laptop.position.z < -10) {
-    laptop.rotation.y += 0.01;
+  if (laptop != null) {
+    if (laptop.position.z < -10) {
+      laptop.rotation.y += 0.01;
+    }
   }
   for (var i = 0; i < 200; i++) {
     stars[i].position.z += 0.1;
@@ -157,7 +201,12 @@ function animate() {
       stars[i].rotation.y = 2 * Math.PI;
     }
   } // controls.update();
-
+  if (Math.abs(cubes[0].position.x) < 30) {
+    for (var i = 0; i < cubes.length; i++) {
+      cubes[i].rotation.x += 0.01;
+      cubes[i].rotation.y += 0.01;
+    }
+  }
   renderer.render(scene, camera);
 }
 
