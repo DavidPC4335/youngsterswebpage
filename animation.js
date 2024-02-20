@@ -32,21 +32,20 @@ renderer.render(scene, camera);
 
 // Torus
 
-const geometry = new THREE.TorusGeometry(10, 3, 16, 100);
-const material = new THREE.MeshStandardMaterial({ color: 0xff6347 });
+const geometry = new THREE.TorusGeometry(20, 3, 16, 100);
+const material = new THREE.MeshStandardMaterial({ color: 0xf0f0f0 });
 const torus = new THREE.Mesh(geometry, material);
 
 //scene.add(torus);
-
+torus.position.set(0, 0, 0);
 const spaceTexture = new THREE.TextureLoader().load("images/space.png");
 scene.background = spaceTexture;
 // Lights
+const light = new THREE.HemisphereLight(0xffffbb, 0x080820, 1);
+scene.add(light);
 
-const pointLight = new THREE.PointLight(0xffffff);
-pointLight.position.set(5, 5, 5);
-
-const ambientLight = new THREE.AmbientLight(0xffffff);
-scene.add(pointLight, ambientLight);
+const ambientLight = new THREE.AmbientLight(0xababab);
+scene.add(light, ambientLight);
 
 //objects
 var laptopLoaded = false;
@@ -73,9 +72,9 @@ mtlLoader.load(
 
 // Helpers
 
-// const lightHelper = new THREE.PointLightHelper(pointLight)
+// const lightHelper = new THREE.PointLightHelper(Light);
 // const gridHelper = new THREE.GridHelper(200, 50);
-// scene.add(lightHelper, gridHelper)
+// scene.add(lightHelper, gridHelper);
 
 const controls = new OrbitControls(camera, renderer.domElement);
 function addStar() {
@@ -108,7 +107,11 @@ function moveCamera() {
   // camera.position.z = t * -0.1;
   // camera.position.x = t * -0.002;
   // camera.rotation.y = t * -0.002;
-  camera.rotateX(t * -0.0002);
+  light.position.set(0, t * 10, t * -0.002);
+  torus.position.z = t / 10 + 70;
+  torus.position.x = t * -0.002;
+  torus.position.y = t * -0.002;
+  // camera.rotateX(t * -0.0002);
   if (laptop != null) {
     laptop.position.z = t / 10 + 10;
     // console.log(laptop.position.z);
@@ -130,9 +133,12 @@ moveCamera();
 function animate() {
   requestAnimationFrame(animate);
   controls.update();
-  torus.rotation.x += 0.01;
-  torus.rotation.y += 0.005;
-  torus.rotation.z += 0.01;
+  // torus.rotation.x += 0.01;
+  // torus.rotation.y += 0.005;
+  // torus.rotation.z += 0.01;
+  if (laptop.position.z < -10) {
+    laptop.rotation.y += 0.01;
+  }
   for (var i = 0; i < 200; i++) {
     stars[i].position.z += 0.1;
     if (stars[i].position.z > 50) {
