@@ -79,7 +79,7 @@ function loadColorTexture(path) {
 }
 const materials = [
   new THREE.MeshBasicMaterial({
-    map: loadColorTexture("images/icons/C_logo.png"),
+    map: loadColorTexture("images/icons/C_Logo.png"),
   }),
   new THREE.MeshBasicMaterial({
     map: loadColorTexture("images/icons/gameMaker.png"),
