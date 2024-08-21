@@ -1,35 +1,43 @@
 import React from 'react';
-import { makeStyles } from '@mui/styles';
+
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import { makeStyles } from '@mui/styles';
+import ProductHero from './LandingScreen/ProductHero';
+import AppFooter from './LandingScreen/AppFooter';
+import { Fade, Slide, useScrollTrigger } from '@mui/material';
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: '100vh',
-    },
-    title: {
-        marginBottom: theme.spacing(2),
-    },
-    button: {
-        marginTop: theme.spacing(2),
-    },
-}));
+
+export const FadeOnScroll = (props) => {
+    const {children,threshold=100} = props;
+    const trigger = useScrollTrigger({
+        target: window,
+        disableHysteresis: true,
+        threshold,
+        
+      });
+      console.log("TWindow:",threshold);
+    return (
+        <Fade
+        in = {trigger || threshold===0}
+        timeout={1400}
+        {...props}
+        >
+            <div>
+            <Slide direction="down" in={trigger||threshold===0} timeout={1000} {...props}>
+            {children}
+            </Slide>
+            </div>
+        </Fade>
+    )
+};
 
 const HomeScreen = () => {
-    const classes = useStyles();
 
     return (
-        <div className={classes.root}>
-            <Typography variant="h2" className={classes.title}>
-                Welcome to the Home Screen!
-            </Typography>
-            <Button variant="contained" color="primary" className={classes.button}>
-                Get Started
-            </Button>
+        <div >
+            <FadeOnScroll threshold={0}  ><div><ProductHero /></div></FadeOnScroll>
+            <AppFooter />
         </div>
     );
 };

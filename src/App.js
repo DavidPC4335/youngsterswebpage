@@ -1,14 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import HomeScreen from './screens/HomeScreen.js';
+import NotFoundComponent from './components/NotFoundComponent';
+import { Stack } from '@mui/material';
 
 function App() {
+  console.log('App.js');
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="present" element = {<PresentationScreen />} />
+      <Route path="/" element={<HomeScreen />} />
       {/* Page Not Found */}
-      <Route path='*' element={<><Header/><Stack pt={15}><NotFoundComponent title={'Whoops.... 404 Page Not Found'}/></Stack></>} />
-      </Routes>
+      <Route path='*' element={<><Stack pt={15}><NotFoundComponent/></Stack></>} />
+    </Routes>
   );
 }
 
