@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
 import { makeStyles, useTheme } from '@mui/styles';
-import { Box, createTheme, Stack } from '@mui/material';
+import styled from '@mui/material/styles/styled';
+import { Box, createTheme, Stack, useMediaQuery } from '@mui/material';
 import Button from './Button';
 import Typography from './Typography';
 import { Send } from '@mui/icons-material';
 import TextField from './TextFeild';
-import { DesktopDatePicker as DatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
-import { LocalizationProvider} from "@mui/x-date-pickers";
+import { DesktopDatePicker as DatePicker, DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
+import { LocalizationProvider, PickersLayout} from "@mui/x-date-pickers";
 import { MobileDatePicker } from "@mui/x-date-pickers/MobileDatePicker";
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import dayjs from 'dayjs';
@@ -19,13 +20,31 @@ const useStyles = makeStyles((theme) => ({
         gap: 2,
     },
 }));
-
+const StyledPickersLayout = styled(PickersLayout)({
+    '.MuiDateCalendar-root': {
+      color: '#fffff',
+      borderWidth: '0px',
+      borderColor: '#e91e63',
+      
+      border: '0px solid',
+      backgroundColor: 'grey',
+    }
+  })
 const ContactFormComponent = ({title='Request an easy Quote'}) => {
     const [state, handleSubmit] = useForm("manwpezr");
     const classes = useStyles();
-    const theme = createTheme();
+    const theme = createTheme({
+        palette: {
+            primary: {
+                main: '#A0522D',
+            },  
+            text: {
+                primary: '#A0522D',
+            },
+        }
+    });
     const [formData, setFormData] = React.useState({});
-
+    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
     // React.useEffect(() => {
     //     console.log("state:",state);
     // }, [state]);
@@ -100,23 +119,39 @@ const ContactFormComponent = ({title='Request an easy Quote'}) => {
               name="message"
               />
             {/* <DatePicker label="📅 Date" variant="outlined" fullWidth/> */}
-            <ThemeProvider theme={theme}>
+            
             <Stack direction='row' width='100%' border='1px solid black' borderBottom='1px solid white' borderRadius='5px'>
                 <Box alignContent='center' >
                 <Typography variant="body1" sx={{width:'130px'}}>{"📅 Perferred Date"}</Typography>
                 </Box>
+                {/* <ThemeProvider theme={theme}> */}
                         <LocalizationProvider dateAdapter={AdapterDayjs} >
-             <MobileDatePicker
+             {isMobile ?<MobileDatePicker
              sx={{width:'100%',color:'black'}}
                         id="pastDate"
-                        name="pastDate"
+                        name="date"
                         selected={formData.preferredDate}
                         // onChange={(date) => setFormData((prevData) => ({ ...prevData, pastDate: date }))}
                         fullWidth
-                        />
+                        slots={{
+                            layout:StyledPickersLayout
+                        }}
+                        /> :
+                        <DesktopDatePicker
+                        id="pastDate"
+                        name="date"
+                        selected={formData.preferredDate}
+                        slots={{
+                            layout:StyledPickersLayout
+                        }}
+                        // onChange={(date) => setFormData((prevData) => ({ ...prevData, pastDate: date }))}
+                        fullWidth
+                        />}
+
                         </LocalizationProvider>
+                        {/* </ThemeProvider> */}
                     </Stack>
-                    </ThemeProvider>
+                    
             <Typography variant="caption" gutterBottom>By submitting this form, you agree to recieve messages from the youngsters team regarding your services.</Typography>
             {state.succeeded ? <Button disabled> Message Sent!</Button>
             :<Button variant="contained" fullWidth endIcon={<Send/>} type='submit'>Send</Button>

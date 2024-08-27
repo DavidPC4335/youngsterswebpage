@@ -2,7 +2,7 @@ import * as React from 'react';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import ProductHeroLayout from './ProductHeroLayout';
-import backgroundImage from '../../images/home-cover.gif';
+import backgroundImage from '../../images/junk.png';
 import { Divider } from '@mui/material';
 import { Phone } from '@mui/icons-material';
 

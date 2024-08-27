@@ -5,7 +5,11 @@ import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-
+import Handshake from '../../images/handshake';
+import Trophy from '../../images/trophy';
+import Badge from '../../images/badge';
+import community from '../../images/community.png';
+import { Paper } from '@mui/material';
 const item = {
   display: 'flex',
   flexDirection: 'column',
@@ -14,9 +18,9 @@ const item = {
 };
 
 const number = {
-  fontSize: 24,
+  fontSize: 30,
   fontFamily: 'default',
-  color: 'secondary.main',
+  color: 'secondary',
   fontWeight: 'medium',
 };
 
@@ -29,7 +33,7 @@ function ProductHowItWorks() {
   return (
     <Box
       component="section"
-      sx={{ display: 'flex', bgcolor: 'secondary.light', overflow: 'hidden' }}
+      sx={{ display: 'flex', bgcolor: 'primary.light', overflow: 'hidden' }}
     >
       <Container
         sx={{
@@ -53,49 +57,45 @@ function ProductHowItWorks() {
           }}
         />
         <Typography variant="h3" marked="center" component="h2" sx={{ mb: 10,borderBottom:'2px solid #888',fontSize:'2rem' }}>
-          How it works
+          Our Values
         </Typography>
         <div>
           <Grid container spacing={5}>
             <Grid item xs={12} md={4}>
               <Box sx={item}>
                 <Box sx={number}>1.</Box>
-                <Box
-                  component="img"
-                  src="https://www.velocitynetwork.foundation/wp-content/uploads/2022/05/wallet2.svg')"
-                  alt="suitcase"
-                  sx={image}
-                />
-                <Typography variant="h5" align="center">
-                  Sign up and create Offers from your organization using VelocityCreds dynamic forms.
+                <Handshake width='150px' component={Paper} elevation={10} sx={{borderRadius:'15px',bgcolor:'grey.400'}} m={1}/>
+                <Typography variant="h5" align="center" sx={{textDecoration:'underline'}}>
+                  Fast and Efficent services
+                </Typography>
+                <Typography variant="body1" align="center">
+                  As a new business, we understand the importance of time and efficiency. We strive to provide the best services in the shortest time possible.
                 </Typography>
               </Box>
             </Grid>
             <Grid item xs={12} md={4}>
               <Box sx={item}>
                 <Box sx={number}>2.</Box>
-                <Box
-                  component="img"
-                  src="https://www.velocitynetwork.foundation/wp-content/uploads/2022/05/blockchain2.svg')"
-                  alt="graph"
-                  sx={image}
-                />
-                <Typography variant="h5" align="center">
-                  Offers are made available to claim on the Velocity Blockchain Network
+                <Badge width='150px' component={Paper} elevation={10} sx={{borderRadius:'15px',bgcolor:'grey.400'}} m={1}/>
+                <Typography variant="h5" align="center" sx={{textDecoration:'underline'}}>
+                  Exceptional Customer Service
+                </Typography>
+                <Typography variant="body1" align="center">
+                  We believe in providing the best customer service to our clients. We are always available to answer any questions or concerns.
                 </Typography>
               </Box>
             </Grid>
             <Grid item xs={12} md={4}>
               <Box sx={item}>
                 <Box sx={number}>3.</Box>
-                <Box
-                  component="img"
-                  src="https://www.velocitynetwork.foundation/wp-content/uploads/2022/06/wallet-1.svg')"
-                  alt="clock"
-                  sx={image}
-                />
-                <Typography variant="h5" align="center">
-                  Recipients claim the offers and add them to their wallet. All Managed by VelocityCreds.
+                <Box component={Paper} elevation={10} sx={{borderRadius:'15px',bgcolor:'grey.400'}} m={1}>
+                <img src={community} alt="community" width='150px' height='auto' />
+                </Box>
+                <Typography variant="h5" align="center" sx={{textDecoration:'underline'}}>
+                  Building Community
+                </Typography>
+                <Typography variant="body1" align="center">
+                  We are a local business and we believe in giving back to the community. We are always looking for ways to help out and support our community.
                 </Typography>
               </Box>
             </Grid>
@@ -105,10 +105,10 @@ function ProductHowItWorks() {
           color="secondary"
           size="large"
           variant="contained"
-          href="/register"
+          href="/contact"
           sx={{ mt: 8 }}
         >
-          Get started
+          Contact us
         </Button>
       </Container>
     </Box>

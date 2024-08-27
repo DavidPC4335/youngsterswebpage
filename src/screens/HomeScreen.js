@@ -6,6 +6,9 @@ import { makeStyles } from '@mui/styles';
 import ProductHero from './LandingScreen/ProductHero';
 import AppFooter from './LandingScreen/AppFooter';
 import { Fade, Slide, useScrollTrigger } from '@mui/material';
+import ProductCTA from './LandingScreen/ProductCTA';
+import ProductHowItWorks from './LandingScreen/ProductHowItWorks';
+import AppAppBar from '../components/nav/AppAppBar';
 
 
 export const FadeOnScroll = (props) => {
@@ -16,7 +19,7 @@ export const FadeOnScroll = (props) => {
         threshold,
         
       });
-      console.log("TWindow:",threshold);
+    //   console.log("TWindow:",threshold);
     return (
         <Fade
         in = {trigger || threshold===0}
@@ -24,7 +27,7 @@ export const FadeOnScroll = (props) => {
         {...props}
         >
             <div>
-            <Slide direction="down" in={trigger||threshold===0} timeout={1000} {...props}>
+            <Slide direction="up" in={trigger||threshold===0} timeout={1000} {...props}>
             {children}
             </Slide>
             </div>
@@ -36,7 +39,10 @@ const HomeScreen = () => {
 
     return (
         <div >
+            <AppAppBar />
             <FadeOnScroll threshold={0}  ><div><ProductHero /></div></FadeOnScroll>
+            <FadeOnScroll threshold={30}  ><div><ProductHowItWorks /></div></FadeOnScroll>
+            <FadeOnScroll threshold={500}  ><div><ProductCTA /></div></FadeOnScroll>
             <AppFooter />
         </div>
     );

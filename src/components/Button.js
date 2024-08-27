@@ -10,10 +10,7 @@ const LightBrownButton = styled(MUIButton)(({ customProp }) => ({
     },
     // Use the customProp to modify the styles
     // based on the value passed to the component
-    ...(customProp === 'special' && {
-        backgroundColor: '#FF0000',
-        color: '#FFFFFF',
-    }),
+    ...customProp,
 }));
 
 function Button({children, ...props }) {

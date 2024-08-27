@@ -19,7 +19,7 @@ const CustomTypography = styled(MUITypography)(({ customProp }) => ({
 
 function Typography({children, ...props }) {
     return (
-        <CustomTypography  {...props}>
+        <CustomTypography color='primary' {...props}>
             {children}
         </CustomTypography>
     );

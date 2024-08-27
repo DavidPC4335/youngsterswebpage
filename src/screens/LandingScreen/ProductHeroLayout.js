@@ -39,7 +39,7 @@ function ProductHeroLayout({multi=true,...props}) {
         <Grid item xs={12} md={6}>
       <Container
         sx={{
-          mt: 3,
+          mt: 14,
           mb: 14,
           display: 'flex',
           flexDirection: 'column',
@@ -49,7 +49,7 @@ function ProductHeroLayout({multi=true,...props}) {
         <img
           src={banner}
           alt="Logo"
-          width="200"
+          width="250"
           // height="80"
         />
         {children}
@@ -75,7 +75,7 @@ function ProductHeroLayout({multi=true,...props}) {
       </Container>
           </Grid>
   {multi&& 
-  <Grid item xs={12} md={6}>
+  <Grid item xs={12} md={6} pt={{md:16,sm:0}}>
         <ContactFormComponent />
         </Grid>}
       </Grid>
