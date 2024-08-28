@@ -28,6 +28,7 @@ import PermContactCalendarIcon from '@mui/icons-material/PermContactCalendar';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import HoverDropDown from './HoverDropDown';
+import { Facebook, Instagram } from '@mui/icons-material';
 
 const logoStyle = {
   transition: '0.5s',
@@ -69,8 +70,8 @@ function AppAppBar({ mode, toggleColorMode ,options,client,...props}) {
         
         sx={{
           top: 0,
-          left: '5%',
-          width: '90%',
+          
+          width: '100%',
           // border:'1px solid black',
           boxShadow: 0,
           bgcolor: 'transparent',
@@ -83,12 +84,14 @@ function AppAppBar({ mode, toggleColorMode ,options,client,...props}) {
           <Toolbar
             variant="regular"
             sx={(theme) => ({
+              // mx:-5,
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
               flexShrink: 0,
-              borderRadius: '999px',
-              bgcolor: 'rgb(160, 82, 45,0.5)',
+              // borderRadius: '999px',
+              // bgcolor: 'rgb(160, 82, 45,0.5)',
+              bgcolor: 'rgb(120, 120, 120,0.7)',
               backdropFilter: 'blur(24px)',
               transition: '0.5s',
               maxHeight: height,
@@ -110,6 +113,7 @@ function AppAppBar({ mode, toggleColorMode ,options,client,...props}) {
                 justifyContent: (options?.[0] ==='Home' ? 'flex-start':'space-between'),
               }}
             >
+              <Stack direction='row' alignItems='center'>
               <img
                 src={
                   logo
@@ -117,7 +121,11 @@ function AppAppBar({ mode, toggleColorMode ,options,client,...props}) {
                 style={logoStyle}
                 alt="logo"
                 width={height === 50 ? '100px' : '150px'}
+                onClick={() => navigate('../../')}
               />
+              <Facebook sx={{cursor:'pointer'}} onClick={()=>window.open('https://www.facebook.com/profile.php?id=61564420419526')} />
+                <Instagram sx={{cursor:'pointer'}} onClick={()=>window.open('https://www.instagram.com/youngsters_junkremoval/')} />
+              </Stack>
               <Stack sx={{ display: { xs: 'none', md: 'flex' } ,
             
             }} direction='row' spacing={2}>
@@ -127,7 +135,7 @@ function AppAppBar({ mode, toggleColorMode ,options,client,...props}) {
 
                 </HoverDropDown>
                 <Button
-                  onClick={() => navigate('/pricing')}
+                  onClick={() => navigate('../../pricing')}
                   sx={{ py: '6px', px: '24px' ,borderRadius: '999px', height:height-height/5,transition: '0.5s'}}
                   // variant='contained'
                   fontSize={`${height/10}rem`}
@@ -156,7 +164,7 @@ function AppAppBar({ mode, toggleColorMode ,options,client,...props}) {
             >
               {/* <ToggleColorMode mode={mode} /> */}
               <Button
-                  onClick={() => navigate('/contact')}
+                  onClick={() => navigate('../../contact')}
                   sx={{ py: '6px', px: '24px' ,borderRadius: '999px', height:height-height/5,transition: '0.5s'}}
                   // variant='contained'
                   color='primary' 
@@ -218,7 +226,7 @@ function AppAppBar({ mode, toggleColorMode ,options,client,...props}) {
                     Our services
                   </Typography>
                 {serviceOptions.map((option) => (
-                  <MenuItem onClick={() => navigate('services/'+option)} sx={{
+                  <MenuItem onClick={() => navigate('../../services/'+option)} sx={{
                     bgcolor:'rgb(160, 82, 45,0.5)',
                     borderRadius: '999px',
                     mt:1,

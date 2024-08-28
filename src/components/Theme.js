@@ -13,6 +13,7 @@ const theme = createTheme({
         text: {
             primary: '#ffffff', // white color
             secondary: '#ffffff', // black color
+            black: '#000000', // black color    
         },
         info: {
             main: '#A0522D', // orangey brown color

@@ -80,6 +80,9 @@ const HoverDropDown = ({title,options,path,children}) => {
             vertical: "top",
             horizontal: "center"
           }}
+          sx={{"& .MuiPaper-root": {
+      backgroundColor: "rgb(160, 82, 45,1)"
+    }}}
         >
             {options.map((option, index) => (
                 <MenuItem
@@ -92,7 +95,7 @@ const HoverDropDown = ({title,options,path,children}) => {
                 }}
                 key={index}
                 onClick={() => {
-                    navigate((path? path+'/' : '')+option.toLowerCase());
+                    navigate('../../'+(path? path+'/' : '')+option.toLowerCase());
                 }}
                 >
                 <Typography variant="body1" color="grey.200">

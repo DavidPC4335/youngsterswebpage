@@ -6,7 +6,7 @@ import backgroundImage from '../../images/junk.png';
 import { Divider } from '@mui/material';
 import { Phone } from '@mui/icons-material';
 
-export default function ProductHero() {
+export default function ProductHero({title='Cheapest Junk Removal in Town',description='Give us a call or book a quote online and see how much you can save!'}) {
   return (
     <ProductHeroLayout
       sxBackground={{
@@ -28,7 +28,7 @@ export default function ProductHero() {
         textShadow: '2px 2px 2px #888',
         fontSize: '3rem',
       }}>
-        Cheapest Junk Removal in Town
+        {title}
       </Typography>
       <Divider />
       <Typography
@@ -37,7 +37,7 @@ export default function ProductHero() {
         variant="h5"
         sx={{ mb: 4, mt: { xs: 4, sm: 10 } }}
       >
-        Give us a call or book a quote online and see how much you can save!
+        {description}
       </Typography>
       <Typography variant='caption'>Support Guelph Locals</Typography>
       <Button
