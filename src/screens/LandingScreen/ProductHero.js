@@ -3,10 +3,10 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import ProductHeroLayout from './ProductHeroLayout';
 import backgroundImage from '../../images/junk.png';
-import { Divider } from '@mui/material';
+import { Divider, Stack } from '@mui/material';
 import { Phone } from '@mui/icons-material';
 
-export default function ProductHero({title='Cheapest Junk Removal in Town',description='Give us a call or book a quote online and see how much you can save!'}) {
+export default function ProductHero({title='Cheapest Junk Removal in Town',description='Give us a call or book a quote online and see how much you can save!',children}) {
   return (
     <ProductHeroLayout
       sxBackground={{
@@ -39,6 +39,8 @@ export default function ProductHero({title='Cheapest Junk Removal in Town',descr
       >
         {description}
       </Typography>
+      <Stack  spacing={2} justifyContent='center'>
+        <Stack alignItems='center'>
       <Typography variant='caption'>Support Guelph Locals</Typography>
       <Button
         color="primary"
@@ -50,7 +52,9 @@ export default function ProductHero({title='Cheapest Junk Removal in Town',descr
       >
         Give us a Call
       </Button>
-  
+      </Stack>
+  {children}
+  </Stack>
     </ProductHeroLayout>
   );
 }

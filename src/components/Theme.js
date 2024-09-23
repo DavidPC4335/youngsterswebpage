@@ -6,6 +6,7 @@ const theme = createTheme({
             main: '#795548', // light brown color
             secondary: '#8B4513', // medium dark brown color
             light: '#D2B48C', // light brown color
+            background: '#F5DEB3', // whiteish brown color
         },
         secondary: {
             main: '#FFD700', // gold color

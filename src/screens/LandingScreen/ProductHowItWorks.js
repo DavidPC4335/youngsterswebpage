@@ -10,6 +10,7 @@ import Trophy from '../../images/trophy';
 import Badge from '../../images/badge';
 import community from '../../images/community.png';
 import { Paper } from '@mui/material';
+import house from '../../images/house.jpg';
 const item = {
   display: 'flex',
   flexDirection: 'column',
@@ -20,7 +21,7 @@ const item = {
 const number = {
   fontSize: 30,
   fontFamily: 'default',
-  color: 'secondary',
+  color: 'text.secondary',
   fontWeight: 'medium',
 };
 
@@ -33,16 +34,22 @@ function ProductHowItWorks() {
   return (
     <Box
       component="section"
-      sx={{ display: 'flex', bgcolor: 'primary.light', overflow: 'hidden' }}
+      sx={{ display: 'flex', 
+        width:'100%',
+        backgroundImage:`url(${house})`,
+      backgroundSize: 'cover'
+      , overflow: 'hidden' }}
     >
       <Container
         sx={{
-          mt: 10,
-          mb: 15,
+          width:'100%',
+          pt: 10,
+          pb: 15,
           position: 'relative',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
+          backgroundColor: 'rgba(0,0,0,0.45)',
         }}
       >
         <Box
@@ -56,19 +63,19 @@ function ProductHowItWorks() {
             opacity: 0.7,
           }}
         />
-        <Typography variant="h3" marked="center" component="h2" sx={{ mb: 10,borderBottom:'2px solid #888',fontSize:'2rem' }}>
+        <Typography variant="h3" marked="center" component="h2" sx={{ mb: 10,borderBottom:'2px solid #888',fontSize:'2rem' }} color='#ffffff'>
           Our Values
         </Typography>
         <div>
           <Grid container spacing={5}>
             <Grid item xs={12} md={4}>
               <Box sx={item}>
-                <Box sx={number}>1.</Box>
+                <Box sx={number} color='#ffffff'>1.</Box>
                 <Handshake width='150px' component={Paper} elevation={10} sx={{borderRadius:'15px',bgcolor:'grey.400'}} m={1}/>
-                <Typography variant="h5" align="center" sx={{textDecoration:'underline'}}>
+                <Typography variant="h5" align="center" sx={{textDecoration:'underline'}} color='#ffffff'>
                   Fast and Efficent services
                 </Typography>
-                <Typography variant="body1" align="center">
+                <Typography variant="body1" align="center" color='#ffffff'>
                   As a new business, we understand the importance of time and efficiency. We strive to provide the best services in the shortest time possible.
                 </Typography>
               </Box>
@@ -77,10 +84,10 @@ function ProductHowItWorks() {
               <Box sx={item}>
                 <Box sx={number}>2.</Box>
                 <Badge width='150px' component={Paper} elevation={10} sx={{borderRadius:'15px',bgcolor:'grey.400'}} m={1}/>
-                <Typography variant="h5" align="center" sx={{textDecoration:'underline'}}>
+                <Typography variant="h5" align="center" sx={{textDecoration:'underline'}} color='#ffffff'>
                   Exceptional Customer Service
                 </Typography>
-                <Typography variant="body1" align="center">
+                <Typography variant="body1" align="center" color='#ffffff'>
                   We believe in providing the best customer service to our clients. We are always available to answer any questions or concerns.
                 </Typography>
               </Box>
@@ -91,10 +98,10 @@ function ProductHowItWorks() {
                 <Box component={Paper} elevation={10} sx={{borderRadius:'15px',bgcolor:'grey.400'}} m={1}>
                 <img src={community} alt="community" width='150px' height='auto' />
                 </Box>
-                <Typography variant="h5" align="center" sx={{textDecoration:'underline'}}>
+                <Typography variant="h5" align="center" sx={{textDecoration:'underline'}} color='#ffffff'>
                   Building Community
                 </Typography>
-                <Typography variant="body1" align="center">
+                <Typography variant="body1" align="center" color='#ffffff'>
                   We are a local business and we believe in giving back to the community. We are always looking for ways to help out and support our community.
                 </Typography>
               </Box>

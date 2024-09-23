@@ -28,7 +28,7 @@ import PermContactCalendarIcon from '@mui/icons-material/PermContactCalendar';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import HoverDropDown from './HoverDropDown';
-import { Facebook, Instagram } from '@mui/icons-material';
+import { Facebook, Home, Instagram } from '@mui/icons-material';
 
 const logoStyle = {
   transition: '0.5s',
@@ -129,8 +129,18 @@ function AppAppBar({ mode, toggleColorMode ,options,client,...props}) {
               <Stack sx={{ display: { xs: 'none', md: 'flex' } ,
             
             }} direction='row' spacing={2}>
-             
-
+                   <Button
+                  onClick={() => navigate('../../')}
+                  sx={{ py: '6px', px: '24px' ,borderRadius: '999px', height:height-height/5,transition: '0.5s'}}
+                  // variant='contained'
+                  fontSize={`${height/10}rem`}
+                  color='white' 
+                  width={height*2}
+                  startIcon={<Home fontSize='xl'/>}
+                >
+                   Home
+                </Button>
+              {/* Our services */}
                 <HoverDropDown options={serviceOptions} title='Our Services' path='services'>
 
                 </HoverDropDown>
@@ -222,6 +232,15 @@ function AppAppBar({ mode, toggleColorMode ,options,client,...props}) {
                  <Typography variant='h7' sx={{textDecoration:'underline'}}>Youngsters Junk Services</Typography>
                  </Stack>
                   </Box>
+                  <MenuItem onClick={() => navigate('../../')} sx={{
+                    bgcolor:'rgb(160, 82, 45,0.5)',
+                    borderRadius: '999px',
+                    mt:1,
+                    '&:hover':{
+                        bgcolor:'rgb(160, 82, 45,0.9)'
+                    }
+                    
+                  }}>Home</MenuItem>
                   <Typography sx={{textDecoration:'underline'}} variant='h6'>
                     Our services
                   </Typography>
@@ -239,7 +258,7 @@ function AppAppBar({ mode, toggleColorMode ,options,client,...props}) {
                   <Typography sx={{textDecoration:'underline'}} variant='h6'>
                     Pricing
                   </Typography>
-                  <MenuItem onClick={() => navigate('pricing')} sx={{
+                  <MenuItem onClick={() => navigate('../../pricing')} sx={{
                     bgcolor:'rgb(160, 82, 45,0.5)',
                     borderRadius: '999px',
                     mt:1,
@@ -249,7 +268,7 @@ function AppAppBar({ mode, toggleColorMode ,options,client,...props}) {
                   }}>
                     Pricing
                   </MenuItem>
-                  <MenuItem onClick={() => navigate('book')} sx={{
+                  <MenuItem onClick={() => navigate('../../contact')} sx={{
                     bgcolor:'rgb(160, 82, 45,0.5)',
                     borderRadius: '999px',
                     mt:1,
@@ -262,7 +281,7 @@ function AppAppBar({ mode, toggleColorMode ,options,client,...props}) {
                   <Typography sx={{textDecoration:'underline'}} variant='h6'>
                     Contact
                   </Typography>
-                  <MenuItem onClick={() => navigate('contact')} sx={{
+                  <MenuItem onClick={() => navigate('../../contact')} sx={{
                     bgcolor:'rgb(160, 82, 45,0.5)',
                     borderRadius: '999px',
                     mt:1,

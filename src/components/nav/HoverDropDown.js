@@ -69,6 +69,7 @@ const HoverDropDown = ({title,options,path,children}) => {
         <Menu
         onMouseOut={handleClose}
         onMouseLeave={handleClose}
+        onClose={handleClose}
           id="simple-menu"
           anchorEl={anchorEl}
           open={open}
@@ -81,14 +82,14 @@ const HoverDropDown = ({title,options,path,children}) => {
             horizontal: "center"
           }}
           sx={{"& .MuiPaper-root": {
-      backgroundColor: "rgb(160, 82, 45,1)"
+      backgroundColor: "rgb(120, 120, 120,0.7)"
     }}}
         >
             {options.map((option, index) => (
                 <MenuItem
-                sx={{bgcolor:'rgb(160, 82, 45,0.5)',
+                sx={{bgcolor:'rgb(120, 120, 120,0.7)',
                 '&:hover':{
-                    bgcolor:'rgb(160, 82, 45,0.9)'
+                    bgcolor:'rgb(120, 120, 120,1)'
                 }
 
 

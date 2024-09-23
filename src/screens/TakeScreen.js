@@ -9,7 +9,8 @@ import { Fade, Slide, useScrollTrigger } from '@mui/material';
 import ProductCTA from './LandingScreen/ProductCTA';
 import ProductHowItWorks from './LandingScreen/ProductHowItWorks';
 import AppAppBar from '../components/nav/AppAppBar';
-
+import bg from '../images/whatdowetakebg.jpg';
+import TakeComponent from './ScreenSections/TakeComponent';
 
 export const FadeOnScroll = (props) => {
     const {children,threshold=100} = props;
@@ -35,17 +36,17 @@ export const FadeOnScroll = (props) => {
     )
 };
 
-const HomeScreen = () => {
+const TakeScreen = () => {
 
     return (
         <div >
             <AppAppBar />
-            <FadeOnScroll threshold={0}  ><div><ProductHero /></div></FadeOnScroll>
-            <FadeOnScroll threshold={0}  ><div><ProductHowItWorks /></div></FadeOnScroll>
-            <FadeOnScroll threshold={500}  ><div><ProductCTA /></div></FadeOnScroll>
+            <FadeOnScroll threshold={0}  ><div><TakeComponent /></div></FadeOnScroll>
+            {/* <FadeOnScroll threshold={0}  ><div><ProductHowItWorks /></div></FadeOnScroll> */}
+            {/* <FadeOnScroll threshold={500}  ><div><ProductCTA /></div></FadeOnScroll> */}
             <AppFooter />
         </div>
     );
 };
 
-export default HomeScreen;
+export default TakeScreen;

@@ -9,7 +9,7 @@ import { Fade, Slide, useScrollTrigger } from '@mui/material';
 import ProductCTA from './LandingScreen/ProductCTA';
 import ProductHowItWorks from './LandingScreen/ProductHowItWorks';
 import AppAppBar from '../components/nav/AppAppBar';
-import PricingComponent from './PricingScreen/PricingComponent';
+import PricingComponent from './ScreenSections/PricingComponent';
 
 
 export const FadeOnScroll = (props) => {

@@ -30,7 +30,7 @@ const image = {
 };
 
 
-const PricingCard=({title,price,description,checklist})=>{
+export const PricingCard=({title,price,description,checklist})=>{
     const navigate = useNavigate();
     return(
         <Box  component={Paper} color={'grey.300'} sx={{transition: '0.3s',
@@ -106,11 +106,12 @@ function PricingComponent() {
           }}
         />
         <Typography variant="h2" marked="center" component="h2" sx={{ mb: 10,
-            borderBottom:'2px solid #888'
-            ,fontSize:'2rem',
-            bgcolor:'rgba(255,255,255,0.5)',
+            borderBottom:'4px solid #888'
+            ,fontSize:'2.5rem',
+            bgcolor:'rgba(255,255,255,0.9)',
             p:2,
-            borderRadius:'15px' 
+            borderRadius:'15px', 
+            // textDecoration: 'underline',
             }}>
           Pricing Models
         </Typography>
@@ -119,14 +120,14 @@ function PricingComponent() {
             <Grid item xs={12} md={4}>
               <Box sx={item}>
                 <PricingCard title='Single Load' 
-                price='~$100'
+                price='~$200'
                 description='Single Load Pricing applies to any load size 
                 that is capable of fitting into a standard 8ft truck bed. 
                 Our team will confirm what items qualify.'
                 checklist={['1 Standard 8ft Truck bed',
                     'Loading From Home',
                     'Small Appliances',
-                    'Furniture',
+                    'Small Furniture',
                     'Yard waste',
 
                 ]}
@@ -136,12 +137,12 @@ function PricingComponent() {
             <Grid item xs={12} md={4}>
               <Box sx={item}>
               <PricingCard title='Trailer Load' 
-                price='~$170'
+                price='~$450'
                 description='Trailer Load Pricing applies to any truck load 
-                as well as our 6x12 trailer. Our team will confirm what items 
+                as well as our 5x10 trailer. Our team will confirm what items 
                 qualify during an inspection.'
                 checklist={['1 Standard 8ft Truck bed',
-                    '1 6x12 Trailer load',
+                    '1 5x10 Trailer load',
                     'Loading From Home',
                     'Small Appliances',
                     'Furniture',
@@ -157,16 +158,15 @@ function PricingComponent() {
                 price='Prices Vary'
                 description='Custom Load Pricing applies to any load size/quantity. We are happy to provide a free estimate that fits your needs and situation the best.'
                 checklist={['Standard 8ft Truck bed',
-                    '6x12 Trailer load(s)',
+                    '5x10 Trailer load(s)',
                     'Loading From Home',
-                    'Small Appliances',
+                    'Appliances',
                     'Furniture',
                     'Yard waste',
                     'Scrap metal',
                     'Construction debris',
-                    'E-waste',
-                    'Mattresses',
-                    
+                    'Commercial cleanouts',
+                    'Estate cleanouts',
                 ]}
                 />
               </Box>
