@@ -6,7 +6,7 @@ import backgroundImage from '../../images/junk.png';
 import { Divider, Stack } from '@mui/material';
 import { Phone } from '@mui/icons-material';
 
-export default function ProductHero({title='Cheapest Junk Removal in Town',description='Give us a call or book a quote online and see how much you can save!',children}) {
+export default function ProductHero({title='Cheapest Junk Removal In Town',description='Give us a call or book a quote online and see how much you can save!',children}) {
   return (
     <ProductHeroLayout
       sxBackground={{

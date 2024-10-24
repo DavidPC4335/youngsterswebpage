@@ -70,7 +70,7 @@ const ContactFormComponent = ({title='Request an easy Quote'}) => {
      
     return (
    
-            <Stack p={5} height={'100%'} 
+            <Stack p={5} height={'95%'} 
                  spacing={2}
                  sx={{
             bgcolor:'rgba(205,205,205,0.3)',

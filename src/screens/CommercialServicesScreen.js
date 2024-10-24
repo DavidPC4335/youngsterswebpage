@@ -19,6 +19,8 @@ import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import Diversity3Icon from '@mui/icons-material/Diversity3';
 import HandshakeIcon from '@mui/icons-material/Handshake';
 import RequestQuoteIcon from '@mui/icons-material/RequestQuote';
+import ApprovalIcon from '@mui/icons-material/Approval';
+import EngineeringIcon from '@mui/icons-material/Engineering';
 
 export const FadeOnScroll = (props) => {
     const {children,threshold=100} = props;
@@ -100,10 +102,10 @@ const ResidentialServicesScreen = () => {
                   }}
                 >
                 <Typography color="inherit" align="center" variant="h2" marked="center">
-                    Our Residential Services
+                    Our Commercial Services
                 </Typography>
                 <Typography color="inherit" align="center" variant="h5" marked="center" py={3}>
-                    We offer a variety of services to our residential customers.
+                    We offer a variety of Commercial services to our indusrty customers.
                 </Typography>
                 <Typography color="inherit" align="center" variant="h5" marked="center">
                     A list of services we offer are shown below:
@@ -118,8 +120,20 @@ const ResidentialServicesScreen = () => {
             <FadeOnScroll threshold={0}  ><div>
                 <Grid container spacing={3} justifyContent="center" alignItems="center" sx={{ backgroundImage: `url(${secondbg})`,}} p={1}>
                     <Grid item xs={12} sm={6} md={4}>
+                    <PricingCard 
+                    icon={<HandshakeIcon />}
+                        title={"Get a quote, fast!"}
+                        description={"We offer fast quotes for our services. Give us a call or book a quote online and we will get back to you as soon as possible. You can also request to have the job done right away."}
+                        checklist={[
+                            "Clear, Upfront Pricing",
+                            "Fast Quotes",
+                            "Same Day Service",
+                        ]}
+                        />  
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={4}>
                         <PricingCard 
-                        icon={<LocalShippingIcon />}
+                        icon={<ApprovalIcon />}
                         title={"On Site Pickup"}
                         description={"We offer on site pickup for all your junk removal needs. Our team will come to your location and remove all your unwanted items. We will take care of everything, so you don't have to worry about a thing."}
                         checklist={[
@@ -131,25 +145,25 @@ const ResidentialServicesScreen = () => {
                     </Grid>
                     <Grid item xs={12} sm={6} md={4}>
                     <PricingCard 
-                    icon={<RequestQuoteIcon />}
-                        title={"Pay By the Load"}
-                        description={"Unlike other companies, we charge by the load. This means you only pay for the space your items take up in our truck. Not by the hour or by the weight. Use Our On-site Quote service to get an estimate."}
+                    icon={<LocalShippingIcon />}
+                        title={"Delivery Services"}
+                        description={"Not only do we pick up junk, we also deliver items. If you need something delivered, we can help. We offer delivery services for all types of items, big or small. Send us a message and we will get back to you as soon as possible."}
                         checklist={[
-                            "Save on Costs for heavy items",
-                            "Don't pay for time, only space",
-                            "No hidden fees or charges",
+                            "Cheap, easy delivery",
+                            "No hidden fees",
+                            "Fast, reliable service",
                         ]}
                         />  
                     </Grid>
                     <Grid item xs={12} sm={6} md={4}>
                     <PricingCard 
-                    icon={<HandshakeIcon />}
-                        title={"Get a quote, fast!"}
-                        description={"We offer fast quotes for our services. Give us a call or book a quote online and we will get back to you as soon as possible. You can also request to have the job done right away."}
+                    icon={<EngineeringIcon />}
+                        title={"Contracted Services"}
+                        description={"We offer contracted services for businesses. If you have a need, we can help. We offer competitive rates and reliable service. Contact us today to learn more."}
                         checklist={[
-                            "Save on Costs for heavy items",
-                            "Don't pay for time, only space",
-                            "No hidden fees or charges",
+                            "Flexible Contracts",
+                            "Cheap, reliable service",
+                            "Professional Staff",
                         ]}
                         />  
                     </Grid>

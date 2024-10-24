@@ -10,7 +10,7 @@ import Trophy from '../../images/trophy';
 import Badge from '../../images/badge';
 import community from '../../images/community.png';
 import { Paper } from '@mui/material';
-import house from '../../images/house.jpg';
+import house from '../../images/whatdowetakebg.jpg';
 const item = {
   display: 'flex',
   flexDirection: 'column',
@@ -71,7 +71,7 @@ function ProductHowItWorks() {
             <Grid item xs={12} md={4}>
               <Box sx={item}>
                 <Box sx={number} color='#ffffff'>1.</Box>
-                <Handshake width='150px' component={Paper} elevation={10} sx={{borderRadius:'15px',bgcolor:'grey.400'}} m={1}/>
+                <Handshake width='150px' component={Paper} elevation={10} sx={{borderRadius:'15px',background:'linear-gradient(to right bottom, #8B4513, #D2B48C)'}} m={1}/>
                 <Typography variant="h5" align="center" sx={{textDecoration:'underline'}} color='#ffffff'>
                   Fast and Efficent services
                 </Typography>
@@ -83,7 +83,7 @@ function ProductHowItWorks() {
             <Grid item xs={12} md={4}>
               <Box sx={item}>
                 <Box sx={number}>2.</Box>
-                <Badge width='150px' component={Paper} elevation={10} sx={{borderRadius:'15px',bgcolor:'grey.400'}} m={1}/>
+                <Badge width='150px' component={Paper} elevation={10} sx={{borderRadius:'15px',background:'linear-gradient(to right bottom, #8B4513, #D2B48C)'}} m={1}/>
                 <Typography variant="h5" align="center" sx={{textDecoration:'underline'}} color='#ffffff'>
                   Exceptional Customer Service
                 </Typography>
@@ -95,7 +95,7 @@ function ProductHowItWorks() {
             <Grid item xs={12} md={4}>
               <Box sx={item}>
                 <Box sx={number}>3.</Box>
-                <Box component={Paper} elevation={10} sx={{borderRadius:'15px',bgcolor:'grey.400'}} m={1}>
+                <Box component={Paper} elevation={10} sx={{borderRadius:'15px',background:'linear-gradient(to right bottom, #8B4513, #D2B48C)'}} m={1}>
                 <img src={community} alt="community" width='150px' height='auto' />
                 </Box>
                 <Typography variant="h5" align="center" sx={{textDecoration:'underline'}} color='#ffffff'>

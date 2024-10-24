@@ -20,6 +20,8 @@ import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import Diversity3Icon from '@mui/icons-material/Diversity3';
 import HandshakeIcon from '@mui/icons-material/Handshake';
 import RequestQuoteIcon from '@mui/icons-material/RequestQuote';
+import ApprovalIcon from '@mui/icons-material/Approval';
+import DryCleaningIcon from '@mui/icons-material/DryCleaning';
 
 export const FadeOnScroll = (props) => {
     const {children,threshold=100} = props;
@@ -120,7 +122,7 @@ const ResidentialServicesScreen = () => {
                 <Grid container spacing={3} justifyContent="center" alignItems="center" sx={{ backgroundImage: `url(${secondbg})`,}} p={1}>
                     <Grid item xs={12} sm={6} md={4}>
                         <PricingCard 
-                        icon={<LocalShippingIcon />}
+                        icon={<ApprovalIcon />}
                         title={"In Home pickup"}
                         description={"We offer in home pickup services for your convenience. Our team will come to your home and pick up your items. No need to worry about moving heavy items."}
                         checklist={[
@@ -132,9 +134,21 @@ const ResidentialServicesScreen = () => {
                     </Grid>
                     <Grid item xs={12} sm={6} md={4}>
                     <PricingCard 
-                    icon={<RequestQuoteIcon />}
-                        title={"Pay By the Load"}
-                        description={"Unlike other companies, we charge by the load. This means you only pay for the space your items take up in our truck. Not by the hour or by the weight."}
+                    icon={<LocalShippingIcon />}
+                        title={"Moving Services"}
+                        description={"We offer residential moving services. We have the equipment and experience to make your move as smooth as possible."}
+                        checklist={[
+                            "Moving Services",
+                            "Fast, Friendly Service",
+                            "Affordable pricing",
+                        ]}
+                        />  
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={4}>
+                    <PricingCard 
+                    icon={<HandshakeIcon />}
+                        title={"Get a quote, fast!"}
+                        description={"We offer fast quotes for our services. Give us a call or book a quote online and we will get back to you as soon as possible for a quote."}
                         checklist={[
                             "Save on Costs for heavy items",
                             "Don't pay for time, only space",
@@ -144,13 +158,13 @@ const ResidentialServicesScreen = () => {
                     </Grid>
                     <Grid item xs={12} sm={6} md={4}>
                     <PricingCard 
-                    icon={<HandshakeIcon />}
-                        title={"Get a quote, fast!"}
-                        description={"We offer fast quotes for our services. Give us a call or book a quote online and we will get back to you as soon as possible. You can also request to have the job done right away."}
+                    icon={<DryCleaningIcon />}
+                        title={"Estate Cleanouts"}
+                        description={"We offer estate cleanout services. We will come to your location and remove all unwanted items. We will take care of everything, so you don't have to worry about a thing."}
                         checklist={[
-                            "Save on Costs for heavy items",
-                            "Don't pay for time, only space",
-                            "No hidden fees or charges",
+                            'Estate Cleanouts',
+                            'Professional Service',
+                            'Affordable Pricing',
                         ]}
                         />  
                     </Grid>

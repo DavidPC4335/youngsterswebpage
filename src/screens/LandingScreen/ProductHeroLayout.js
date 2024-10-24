@@ -35,7 +35,7 @@ function ProductHeroLayout({multi=true,...props}) {
 
   return (
     <ProductHeroLayoutRoot>
-      <Grid container px={1}>
+      <Grid container px={1} py={3}>
         <Grid item xs={12} md={multi?6:12}>
       <Container
         sx={{
